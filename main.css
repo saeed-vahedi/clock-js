@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: rgb(43, 43, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+
+.wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    height: 200px;
+    /* border: 2px solid red; */
+    position: relative;
+}
+
+.circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+
+}
+
+.ampm{
+    position: absolute;
+    right: -80px;
+    top: 20px;
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg,#04fc43,#fee800,#ff2972);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 2s ease-in-out infinite alternate;
+}
+
+.innerc{
+    color: aliceblue;
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+svg{
+    position: absolute;
+    fill: transparent;
+    transform: rotate(-90deg);
+}
+svg circle:first-child{
+    stroke: rgba(7, 7, 7, 0.575);
+    stroke-width: 6px;
+
+}
+svg circle:last-child{
+    stroke: var(--clr);
+    stroke-width: 6px;
+    stroke-dasharray: 440;
+    stroke-linecap:round;
+}
+
+.indicator{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--clr);
+    z-index: 999;
+    box-shadow: 0 0 10px  2px var(--clr) , 0 0 10px  1px var(--clr) ;
+    top: 0px;
+    left: calc(50%-5px);
+    transform-origin:5px 75px
+    
+}
+
+.innerc span{
+    position: absolute;
+    font-size: 13px;
+    font-weight: 100;
+    top: 50px;
+    
+}
+
+
+
+@keyframes move{
+    0%{
+        background-position: 0% 0%;
+    }
+
+    100%{
+        background-position: 100% 0%;
+    }
+}
